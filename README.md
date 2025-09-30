@@ -1,6 +1,6 @@
 # 🎓 Crammr - AI-Powered Study Notes Platform
 
-**Transforming the way students learn through curated notes, AI-powered tools, and collaborative knowledge sharing.**
+**Transforming the way students learn through curated notes, AI-powered tools, and collaborative knowledge sharing. Crammr (all rights reserved)**
 
 ## 🏆 What Makes Crammr Special
 
