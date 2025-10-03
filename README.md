@@ -1,53 +1,85 @@
-# 🎓 Crammr - AI-Powered Study Notes Platform
+# Crammr: An AI-Powered Study Platform
 
-**Transforming the way students learn through curated notes, AI-powered tools, and collaborative knowledge sharing. Crammr (all rights reserved)**
+Crammr is a free, non-profit platform that provides students with access to high-quality, university-specific study notes, enhanced with a suite of intelligent, AI-powered learning tools. This project was developed by a single student in 36 hours at the Shellhacks hackathon.
 
-## 🏆 What Makes Crammr Special
+**[Live Demo](https://crammr-mvp.onrender.com/)** | **[Video Walkthrough](https://www.youtube.com/watch?v=gQo1GUCX5eo)**
 
-### 🎯 **Curated Notes Catalog - University & Course Specific**
-- **School-Specific Content**: Notes are organized by university (currently featuring University of Florida)
-- **Course-Specific Organization**: Each course (MAC2311, PHY2048, etc.) has its own dedicated section
-- **Quality Curated**: Only the best student notes make it to the platform through our AI-powered review system
-- **Proven Success**: Notes come from students who successfully completed and excelled in these specific courses
+## The Problem
 
-### 🤖 **AI-Powered Study Tools**
-- **Smart Chat Assistant**: Ask questions about your notes and get instant, contextual answers
-- **Dynamic Flashcard Generation**: AI creates custom flashcards from your PDF content (1-10 cards, topic-focused)
-- **Intelligent Quiz Creation**: Generate multiple-choice quizzes tailored to specific topics within your notes
-- **Plain Text Responses**: Clean, formatted answers optimized for student comprehension
+For many university students, finding reliable and relevant study material is a significant challenge. The available options are often limited to searching for a classmate with high-quality notes, paying for expensive tutoring services, or navigating a vast amount of irrelevant, often paywalled, online content.
 
-### 📊 **Revolutionary Notes Comparison System**
-- **AI-Powered Evaluation**: Compare new note submissions against approved standards using advanced AI analysis
-- **Multi-Criteria Assessment**:
-  - **Syllabus Closeness** (40%): How well notes align with official course objectives
-  - **Organization** (20%): Structure, clarity, and logical flow of content  
-  - **Exam Effectiveness** (40%): How well notes prepare students for actual exams
-- **Human-in-the-Loop**: AI recommendations combined with human oversight ensures quality
-- **Continuous Improvement**: As more high-quality notes are added, the standard continuously improves
+## The Solution
 
-## 🚀 Key Features
+Crammr addresses this by creating a centralized, free-to-use hub for the best study resources, curated specifically for each course at a given university. The platform is built on two core pillars:
 
-### 📚 **Student-Centric Design**
-- **Free to Use**: All features available at no cost to students
-- **By Students, For Students**: Built with real student needs in mind
-- **University of Florida Focus**: Tailored specifically for UF courses and curriculum
+1.  **AI-Powered Note Curation**: Crammr collects notes submitted by students who have successfully completed a course. An advanced AI algorithm, powered by the Google Gemini API, analyzes these submissions against the course syllabus and approved reference materials to score them based on syllabus coverage, organization, and exam effectiveness. A human volunteer then performs a final review to ensure only the highest quality notes are published.
 
-### 🔧 **Technical Excellence**
-- **Next.js 14** with React and TypeScript
-- **Google Gemini AI** integration for all AI features
-- **Custom PDF Processing** with base64 conversion and chunked processing
-- **Responsive Design** with Tailwind CSS
-- **Real-time Processing** with loading states and error handling
+2.  **Intelligent Study Suite**: To enhance the learning experience, Crammr provides a set of AI tools that work with the curated notes:
 
-### 🎨 **User Experience**
-- **Clean Interface**: Minimal, focused design that doesn't distract from studying
-- **Interactive Tools**: Click-to-reveal flashcards, progress tracking, animated feedback
-- **Mobile Responsive**: Study anywhere, on any device
-- **Seamless Navigation**: Intuitive flow between notes, tools, and admin features
+      * **Smart Chatbot**: A contextual assistant that can answer questions about the course material by referencing the provided notes and syllabus.
+      * **Dynamic Quiz Generation**: Creates personalized quizzes to help students test their knowledge on specific topics.
+      * **Podcast Summaries**: Generates audio summaries of the material for on-the-go learning.
 
-## 🏗️ **System Architecture**
+## Key Features
 
-### 📱 **Frontend Pages**
+  * **University-Specific Content**: Notes are organized by university and course, ensuring all content is relevant to the student's specific curriculum.
+  * **AI Quality Analysis**: A multi-criteria algorithm evaluates and ranks submitted notes, combining AI analysis with human oversight to maintain high standards.
+  * **Context-Aware AI Tools**: The chatbot, quiz generator, and other tools are designed to work directly with the content of the notes a student is viewing.
+  * **Student-Centric and Non-Profit**: The platform is built by students, for students, and is committed to being a free resource.
+  * **Admin Dashboard**: A dedicated interface for volunteers to review AI analysis, manage submissions, and approve content.
+
+## Tech Stack
+
+  * **Framework**: Next.js 14 (App Router)
+  * **Language**: TypeScript
+  * **AI Engine**: Google Gemini API for note analysis, chat functionality, and content generation.
+  * **Styling**: Tailwind CSS
+  * **UI Components**: shadcn/ui
+
+## Setup and Installation
+
+### Prerequisites
+
+  * Node.js version 18.0.0 or higher
+  * A package manager such as `npm` or `pnpm`
+  * A Google Gemini API key
+
+### Installation Steps
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/crammr.git
+    cd crammr
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Set up environment variables:**
+    Create a `.env.local` file in the root directory and add your Google Gemini API key:
+
+    ```env
+    GEMINI_API_KEY="your_google_gemini_api_key_here"
+    ```
+
+4.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+    The application will be available at `http://localhost:3000`.
+
+## Future Work
+
+As a functional MVP, the next steps for Crammr include:
+
+  * **Full-Scale Deployment**: Building out a dedicated development team to prepare the platform for a production environment.
+  * **University Rollout**: Launching the platform at Florida universities, starting with Florida International University (FIU) and the University of Florida (UF), with the help of student volunteers.
 - **Landing Page** (`/`): Hero section with animated text and clear call-to-action
 - **Classes Browser** (`/classes`): Course selection with UF-specific catalog
 - **Notes Viewer** (`/notes/[classCode]`): Main study interface with PDF viewer, AI chat, and revision tools
